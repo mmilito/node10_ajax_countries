@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+	div.container
+		h1 Countries
+
+		div
+			form#search-form
+				input#search-name(name='country-name',type='text',placeholder='Country to Search For')
+
+		div
+			button.btn(name='button') Load Countries
+
+		div.country-list
+
+			ul#indiv-list
+			//- 	for country in countries
+			//- 		li strong=country.name
