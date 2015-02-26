@@ -6,11 +6,12 @@ block content
 		h1 Countries
 
 		div
-			form#search-form
+			form#search-form(action='/searchClick',type='submit')
 				input#search-name(name='country-name',type='text',placeholder='Country to Search For')
+				button#search-btn(name='goSearch') Search
 
 		div
-			button.btn(name='button') Load Countries
+			button#btnLoad(name='button') Load Countries
 
 		div.country-list
 

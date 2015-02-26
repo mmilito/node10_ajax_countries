@@ -14,7 +14,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get('/', indexController.index);
 
 app.get('/countreez', indexController.countryInfo);
-app.post('/search', indexController.countrySearch);
+app.get('/search', indexController.countrySearchRedir);
+app.post('/searchClick', indexController.countrySearch);
 
 
 

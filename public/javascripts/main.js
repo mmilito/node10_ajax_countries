@@ -3,7 +3,7 @@
 
 $(document).on('ready',function(){
 
-	$('.btn').on('click',function(){
+	$('#btnLoad').on('click',function(){
 		$.get('/countreez',function(data){
 			for (var i=0;i<10;i++){
 			// console.log(data.countries[i]);
@@ -16,7 +16,18 @@ $(document).on('ready',function(){
 			
 	});
 
-
+	$('#search-btn').on('click',function(e){
+		e.preventDefault();
+		var searchValue = $('#search-name').val();
+		var searchValfromForm = {
+			valueFromClient: searchValue
+		};
+		$.post('/searchClick',searchValfromForm,function(){
+			console.log(searchvalue);
+			console.log(searchValfromForm);
+		});
+		
+	});
 
 
 }); // doc on ready

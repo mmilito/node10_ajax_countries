@@ -9,8 +9,13 @@ var indexController = {
 		//console.log(countries);
 		res.send({countries:countries});
 	},
+	countrySearchRedir: function(req,res){
+		console.log('res redir');
+		res.render('index');
+	},
 	countrySearch: function(req,res){
 		//res send country where country name = req.name
+		console.log(req.body);
 	}
 
 
