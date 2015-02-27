@@ -2,8 +2,10 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var indexController = require('./controllers/index.js');
 
+mongoose.connect('mongodb://localhost/countries');
 
 var app = express();
 app.set('view engine', 'jade');

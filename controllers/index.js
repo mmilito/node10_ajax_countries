@@ -1,5 +1,5 @@
 // SERVER SIDE CODE
-var countries = require('../models/countries.json');
+var Country= require('../models/countries.js');
 
 var indexController = {
 	index: function(req, res) {
@@ -7,7 +7,10 @@ var indexController = {
 	},
 	countryInfo: function(req,res){
 		//console.log(countries);
-		res.send({countries:countries});
+		Country.find({},function(err,results){
+			console.log('success');
+			res.send(results);
+		});
 	},
 	countrySearchRedir: function(req,res){
 		console.log('res redir');
@@ -15,9 +18,11 @@ var indexController = {
 	},
 	countrySearch: function(req,res){
 		//res send country where country name = req.name
-		console.log(req.body);
+		Country.find({name:req.body.name},function(err,results){
+			//console.log(req.body.name);
+			res.send(results);
+		});
 	}
-
 
 };
 
