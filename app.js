@@ -18,6 +18,7 @@ app.get('/', indexController.index);
 app.get('/countreez', indexController.countryInfo);
 app.get('/search', indexController.countrySearchRedir);
 app.post('/searchClick', indexController.countrySearch);
+app.get('/beenHere/:countryId',indexController.beenHere);
 
 
 
